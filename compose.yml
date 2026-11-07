@@ -1,0 +1,12 @@
+services:
+  ohm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ohm
+    image: ohm:local
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/srv:Z
+    restart: unless-stopped
